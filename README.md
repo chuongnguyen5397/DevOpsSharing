@@ -15,4 +15,7 @@ Please let me know if you find something wrongs and I will fix that
     |── Configuration
     |── Installation
     └── Istio
+        |── Observability
+        |── Security
+        └── Traffic Management
 ```
