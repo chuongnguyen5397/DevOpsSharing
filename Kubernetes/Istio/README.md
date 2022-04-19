@@ -107,3 +107,75 @@ Istio is heavily optimized, so all things like configuration data or TLS certs a
   * Citadel
 
     * The component deals with security certificates. It generates certificates for any new services that join the mesh and delivers certificates to the proxies in need.
+
+## Running Istio in production
+
+Concerns:
+
+* Configuration: Which features need to be enabled. All of the Istio features will require a lof of compute resources.
+
+* Process: Repeatable process so that we can changes to our running Istio setup.
+
+* Migration: Existed Pods or Pods doesn't need to join the Service Mesh still need the right configuration
+
+Deployment ways:
+
+* Manifest Deployment: Manual Ownership, no configuration options
+
+* Helm Deployment: istio-init chart and istio chart are centrally managed, configurable profiles and settings.
+
+  * But Istio helm chart is deprecated
+
+* Istioctl Deployment:
+
+  * Built by Istio team and deployed on the same release cadence as Istio itself.
+
+  * Centralized management, configurable profiles and settings
+
+  * Multi-purpose control tool
+
+    * Work with YAML manifests: kube-inject, profile dump,...
+
+    * Work with kubectl: manage Istio components in Kubernetes cluster like manifest apply, dashboard grafana,...
+
+*istioctl profile list* : List all the available profile. Use different profiles to meet our needs. Profile default is recommended for production
+
+*istioctl profile dump*: Dump the settings of current profile.
+
+*istioctl manifest apply*: Istio generates Kubernetes manifest and use kubectl to deploy that
+
+*istioctl manifest generate*: Istio generates manifests on local system and we can manage it.
+
+*istioctl manifest generate -f kiali-enable.yaml*: Override default config with custom config in yaml file
+
+Namespace need to have labels **istio-injection: enabled** to have sidecar for each pod.
+
+*istioctl kube-inject*: This command takes an input YAML file, and for every pod specification, it adds an Istio proxy container.
+
+Failure Scenarios:
+
+* Pilot: the configuration cache will get stale, and changes won't get propagated to existing pods, new proxy pods can't start since Pilot can't be connected to download configuration
+
+* Citadel: Certificates expire so any mutual TLS calls will fail.
+
+* Mixer: Proxies can't make policy checks, and telemetry reports won't be received
+
+## When should we use Service Mesh?
+
+* Service sprawl: If you have lots of services and don't have central way to manage them
+
+* Release bottlenecks: Make developer team and manager level can test in dark launch without a lot of approvals
+
+* Custom implementations: No central management like this third-party libraries for dark launch, others for blue-green deployment
+
+* Cloud-native app pilot 
+
+## But consider the cost
+
+Beside runtime cost of having extra CPU cycles to power the Istio components
+
+* Locking ourselves into the service mesh architecture
+
+* Learning curve: We have to be confident about Docker, Kubernetes and Istio
+
+* Environment drift: All environment setup are different.

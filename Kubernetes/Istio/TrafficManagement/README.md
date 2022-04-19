@@ -60,12 +60,17 @@ apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
 spec:
   hosts:
-  - example                   < The host requested by the client
+  - example.com               < The host requested by the client
   http:
-  - route:                    < Routing for HTTP traffic
+  - match:
+      - headers: 
+          cookie:
+            regex: "^(.*?;)?(product-page=v2)(;.*)?$"
+    route:                    < Routing for HTTP traffic
     - destination: 
         host: example         < Traffic will be routed to one of those pods in example service.
         subset: v2            < The subset defined in the DestinationRule
+      weigh: 100
 ```
 
 * Destination Rule
@@ -74,7 +79,9 @@ spec:
 apiVersion: networking.istio.io/v1alpha3
 kind: DestinationRule
 spec:
-  host: example               < The host requested by the client
+  host: example.com           < The host requested by the client
+  gateways:
+    - example-gateway
   subsets:                    < Available subsets for routing
   - name: v1
     labels: 
@@ -82,7 +89,15 @@ spec:
   - name: v2
     labels: 
       version: v2             < Will only use Pods that have the label version v2
+    trafficPolicy:
+      outlierDetection:
+        consecutiveErrors: 2
+        interval: 1m
+        baseEjectionTime: 5m
+        maxEjectionPercent: 100
 ```
+
+* Gateway 
 
 When run in Kubernetes, subset is a selection of the Pods within a Kubernetes service
 
