@@ -179,3 +179,5 @@ Beside runtime cost of having extra CPU cycles to power the Istio components
 * Learning curve: We have to be confident about Docker, Kubernetes and Istio
 
 * Environment drift: All environment setup are different.
+
+* Anti-DevOps: Istio lends itself more to SRE approach than DevOps
