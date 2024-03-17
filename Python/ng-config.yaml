@@ -1,0 +1,30 @@
+apiVersion: eksctl.io/v1alpha5
+kind: NodeGroupConfig
+
+metadata:
+  name: deep-learning
+  cluster: eks_us_east_1_luminary_01
+  region: us-east-1
+
+managed: true
+spot: false
+instanceType: g4dn.xlarge
+asgDesiredCapacity: 1
+asgMinSize: 1
+asgMaxSize: 1
+volumeSize: 20
+ssh:
+  allow: true
+vpc:
+  id: vpc-0fdb248cdd7fad501  # Replace with your VPC ID
+  subnets:
+    private:
+      us-east-1a: {id: subnet-0c003f8214ebbf6b3}  # Replace with your private subnet ID in us-east-1a
+      us-east-1b: {id: subnet-074791b82201eacbe}  # Replace with your private subnet ID in us-east-1b
+      us-east-1c: subnet-0326ef65e0ad48b0b  # Replace with your private subnet ID in us-east-1b
+    public:
+      us-east-1a: {id: subnet-074580e15f825e452}  # Replace with your public subnet ID in us-east-1a
+      us-east-1b: {id: subnet-0be5909951969672d}  # Replace with your public subnet ID in us-east-1b
+      us-east-1c: {id: subnet-00976db491a635327}  # Replace with your public subnet ID in us-east-1b
+  securityGroup:
+    id: sg-0279250c1a0520fc5  # Replace with your security group ID

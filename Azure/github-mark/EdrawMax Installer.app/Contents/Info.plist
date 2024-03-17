@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AllowedDownloadImmediatelyWhenApplicationLaunch</key>
+	<string>0</string>
+	<key>BannerJumpURL</key>
+	<string>https://wae.wondershare.cc/embed/5380/index.html</string>
+	<key>BugsplatServerURL</key>
+	<string>https://Wondershare_InstallerForMac.bugsplatsoftware.com/</string>
+	<key>BuildMachineOSBuild</key>
+	<string>20D64</string>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>CFBundleDisplayName</key>
+	<string>EdrawMax Installer</string>
+	<key>CFBundleExecutable</key>
+	<string>Product Installer</string>
+	<key>CFBundleIconFile</key>
+	<string>AppIcon.icns</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.wondershare.Installer</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>EdrawMax Installer</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>3.7.5</string>
+	<key>CFBundleSupportedPlatforms</key>
+	<array>
+		<string>MacOSX</string>
+	</array>
+	<key>CFBundleVersion</key>
+	<string>289</string>
+	<key>CarouselEnabled</key>
+	<true/>
+	<key>DTCompiler</key>
+	<string>com.apple.compilers.llvm.clang.1_0</string>
+	<key>DTPlatformBuild</key>
+	<string>12D4e</string>
+	<key>DTPlatformName</key>
+	<string>macosx</string>
+	<key>DTPlatformVersion</key>
+	<string>11.1</string>
+	<key>DTSDKBuild</key>
+	<string>20C63</string>
+	<key>DTSDKName</key>
+	<string>macosx11.1</string>
+	<key>DTXcode</key>
+	<string>1240</string>
+	<key>DTXcodeBuild</key>
+	<string>12D4e</string>
+	<key>DownloadApplicationPackageURL</key>
+	<string>https://download.edrawsoft.com/cbs_down/edraw-max_full5380.zip</string>
+	<key>GATrackerID</key>
+	<string>UA-80734007-6</string>
+	<key>InstallApplicationID</key>
+	<string>com.edrawsoft.edrawmax</string>
+	<key>InstallApplicationName</key>
+	<string>EdrawMax for Mac</string>
+	<key>InstallApplicationVersion</key>
+	<string>0.0.0</string>
+	<key>LSApplicationCategoryType</key>
+	<string>public.app-category.productivity</string>
+	<key>LSMinimumSystemVersion</key>
+	<string>10.10</string>
+	<key>MinimumSupportSystemVersion</key>
+	<string>10.9</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>NSHumanReadableCopyright</key>
+	<string>Copyright © 2019 Wondershare. All rights reserved.</string>
+	<key>NSMainNibFile</key>
+	<string>MainMenu</string>
+	<key>NSPrincipalClass</key>
+	<string>NSApplication</string>
+	<key>SpareDownloadPackageURL</key>
+	<string></string>
+</dict>
+</plist>

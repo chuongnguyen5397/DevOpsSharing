@@ -1,0 +1,16 @@
+/*
+InfoPlist.strings
+ProductInstaller
+
+Created by SZ13031814M01 on 13/06/2019.
+Copyright © 2019 PE. All rights reserved.
+*/
+"PID" = "5380";
+"Language" = "ko";
+"CFBundleName" = "EdrawMax 설치 프로그랩";
+"CFBundleDisplayName" = "EdrawMax 설치 프로그랩";
+"NSHumanReadableCopyright" = "Copyright © 2022 Edrawsoft. 모든 권리 보유.";
+"CustomerServiceURL" = "http://cbs.wondershare.com/go.php?pid=5380&m=dc";
+"ProductPageURL" = "http://cbs.wondershare.com/go.php?pid=5380&m=dp";
+"UserAgreementURL" = "https://www.edrawsoft.com/license.html#license";
+"PrivacyPolicyURL" = "https://www.edrawsoft.com/license.html#privacy";

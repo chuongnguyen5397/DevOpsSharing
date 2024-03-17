@@ -1,0 +1,39 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: eks_us_east_1_luminary_01
+  region: us-east-1
+
+availabilitiesZones:
+- us-east-1a
+- us-east-1b
+- us-east-1c
+managedNodeGroups:
+- name: ng-1-workers
+  labels: { role: deeplearning }
+  instanceType: g4dn.xlarge
+  desiredCapacity: 10
+  volumeSize: 10
+  privateNetworking: true
+  spot: true
+vpc:
+  sharedNodeSecurityGroup: sg-0279250c1a0520fc5
+  id: "vpc-0fdb248cdd7fad501"
+  subnets:
+    private:
+      us-east-1a:
+          id: "subnet-0c003f8214ebbf6b3"
+      us-east-1b:
+          id: "subnet-074791b82201eacbe"
+      us-east-1c:
+          id: "subnet-0326ef65e0ad48b0b"
+    public:
+      us-east-1a:
+          id: "subnet-074580e15f825e452"
+      us-east-1b:
+          id: "subnet-0be5909951969672d"
+      us-east-1c:
+          id: "subnet-00976db491a635327"
+
+#  eksctl create nodegroup --cluster eks_us_east_1_luminary_01 --instance-types g4dn.xlarge --managed --spot --name DeepLearningNodeGroup --asg-access --nodes-max 20 --region us-east-1

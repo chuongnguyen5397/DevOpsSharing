@@ -1,0 +1,16 @@
+/*
+InfoPlist.strings
+ProductInstaller
+
+Created by SZ13031814M01 on 13/06/2019.
+Copyright © 2019 PE. All rights reserved.
+*/
+"PID" = "5380";
+"Language" = "sv";
+"CFBundleName" = "EdrawMax Installatör";
+"CFBundleName" = "EdrawMax Installatör";
+"NSHumanReadableCopyright" = "Copyright © 2022 Edrawsoft.\nAlla rättigheter förbehållna.";
+"CustomerServiceURL" = "http://cbs.wondershare.com/go.php?pid=5380&m=dc";
+"ProductPageURL" = "http://cbs.wondershare.com/go.php?pid=5380&m=dp";
+"UserAgreementURL" = "http://pop.wondershare.com/license-se.html#license";
+"PrivacyPolicyURL" = "http://pop.wondershare.com/license-se.html#privacy";
